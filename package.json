@@ -5,6 +5,9 @@
   "repository": "https://github.com/myoann/oneplayer-tech-test.git",
   "author": "Yoann Moise <yoann.moise@canal-plus.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "4.17.3"
   }
