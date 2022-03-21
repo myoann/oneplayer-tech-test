@@ -1,0 +1,11 @@
+{
+  "name": "oneplayer-tech-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/myoann/oneplayer-tech-test.git",
+  "author": "Yoann Moise <yoann.moise@canal-plus.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.3"
+  }
+}
