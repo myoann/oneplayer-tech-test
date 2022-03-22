@@ -1,6 +1,17 @@
 const express = require('express');
 const app = express();
 
+const bonusImages = [
+	{
+		path: "https://peach.blender.org/wp-content/uploads/storyboardplate1.JPG",
+		description: "Storyboard"
+	},
+	{
+		path: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
+		description: "Poster"
+	}
+]
+
 const castBunny = {
 	id: 0,
 	description: "Le lapin",
@@ -312,8 +323,10 @@ const crew = [
 	}
 ];
 
+// Util to add a delay
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
+// Route to get the list of all the scenes existing with minimal data
 app.get('/scenes', (req,res) => {
 	const simplifiedScenes = scenes.map((scene) => {
 		return {
@@ -327,21 +340,27 @@ app.get('/scenes', (req,res) => {
     res.status(200).json(simplifiedScenes)
 })
 
+// Route to get the crew who worked on the project with their names, roles, etc.
 app.get('/crew', (req,res) => {
     res.status(200).json(crew)
 })
 
-// TODO: add images
+// Route to get bonus images
+app.get('/bonusImages', (req,res) => {
+    res.status(200).json(bonusImages)
+})
 
-
-app.get('/scene/:timecode', (req,res) => {
+// Route to get the details of a specific scene corresponding to the given timecode
+app.get('/scene/:timecode', async (req,res) => {
 	const timecode = req.params.timecode;
 
     const scene = scenes.find((scene) => 
     	scene.beginTimecode <= timecode && scene.endTimecode >= timecode
     );
 
+	// Add a delay between 0 and 5 seconds before returning a result  
    	const randomNumber = Math.floor(Math.random() * 5000) + 1;
+   	await delay(randomNumber);
 
     res.status(200).json(scene)
 })
