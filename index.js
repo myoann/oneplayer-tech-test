@@ -12,47 +12,47 @@ const bonusImages = [
 	}
 ]
 
-const castBunny = {
+const castBunny = (sceneId) => ({
 	id: 0,
 	description: "Le lapin",
 	name: "Big Buck Bunny",
-	image: "https://upload.wikimedia.org/wikipedia/commons/5/5f/BBB-Bunny.png"
-};
+	image: `./images/characters/Bunny${sceneId}.png`
+});
 
-const castFrank = {
+const castFrank = (sceneId) => ({
 	id: 1,
 	description: "L'écureuil volant",
 	name: "Frank",
-	image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Big.Buck.Bunny.-.Frank.png"
-};
+	image: `./images/characters/Joe${sceneId}.png`
+});
 
-const castRinky = {
+const castRinky = (sceneId) => ({
 	id: 2,
 	description: "L'écureuil rouge",
 	name: "Rinky",
-	image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Big.Buck.Bunny.-.Ricky.png"
-};
+	image: `./images/characters/Alfred${sceneId}.png`
+});
 
-const castGimerra = {
+const castGimerra = (sceneId) => ({
 	id: 3,
 	description: "Le chinchilla",
 	name: "Gimerra",
-	image: "https://peach.blender.org/wp-content/uploads/furtest_render.jpg"
-};
+	image: `./images/characters/Chichi${sceneId}.png`
+});
 
-const castBird = {
+const castBird = (sceneId) => ({
 	id: 4,
 	description: "L'oiseau",
 	name: "Bird",
-	image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Chirp1_-_BBB_-_reduced_snapshot.png"
-};
+	image: `./images/characters/oiseau${sceneId}.png`
+});
 
 
 const scenes = [
 	{
 		id: 0,
 		title: "Génerique",
-		casting: [castBird],
+		casting: [castBird(1)],
 		image: "./images/scenes/scene1",
 		beginTimecode: 0,
 		endTimecode: 30
@@ -60,7 +60,7 @@ const scenes = [
 	{
 		id: 1,
 		title: "Le réveil de Bunny",
-		casting: [castBunny, castFrank],
+		casting: [castBunny(2), castFrank(2)],
 		image: "./images/scenes/scene2",
 		reactions: [
 			{
@@ -75,7 +75,7 @@ const scenes = [
 	{
 		id: 2,
 		title: "La chute du papillon",
-		casting: [castBunny, castFrank],
+		casting: [castBunny(3), castFrank(3)],
 		image: "./images/scenes/scene3",
 		reactions: [
 			{
@@ -95,7 +95,7 @@ const scenes = [
 	{
 		id: 3,
 		title: "La rencontre",
-		casting: [castBunny, castFrank, castRinky, castGimerra],
+		casting: [castBunny(4), castFrank(4), castRinky(4), castGimerra(4)],
 		image: "./images/scenes/scene4",
 		beginTimecode: 104,
 		endTimecode: 146
@@ -103,7 +103,7 @@ const scenes = [
 	{
 		id: 4,
 		title: "La diversion",
-		casting: [castBunny, castFrank, castRinky, castGimerra],
+		casting: [castBunny(5), castFrank(5), castRinky(5), castGimerra(5)],
 		image: "./images/scenes/scene5",
 		reactions: [
 			{
@@ -123,7 +123,7 @@ const scenes = [
 	{
 		id: 5,
 		title: "Le crime",
-		casting: [castBunny, castFrank, castRinky, castGimerra],
+		casting: [castBunny(6), castFrank(6), castRinky(6), castGimerra(6)],
 		image: "./images/scenes/scene6",
 		beginTimecode: 186,
 		endTimecode: 241
@@ -131,7 +131,7 @@ const scenes = [
 	{
 		id: 6,
 		title: "La vengeance est un plat qui se mange froid",
-		casting: [castBunny],
+		casting: [castBunny(7)],
 		image: "./images/scenes/scene7",
 		reactions: [
 			{
@@ -146,7 +146,7 @@ const scenes = [
 	{
 		id: 7,
 		title: "Que fait Bunny ?",
-		casting: [castBunny, castFrank, castRinky, castGimerra],
+		casting: [castBunny(8), castFrank(8), castRinky(8), castGimerra(8)],
 		image: "./images/scenes/scene8",
 		reactions: [
 			{
@@ -161,7 +161,7 @@ const scenes = [
 	{
 		id: 8,
 		title: "Bunny contre attaque",
-		casting: [castBunny],
+		casting: [castBunny(9)],
 		image: "./images/scenes/scene9",
 		beginTimecode: 300,
 		endTimecode: 339
@@ -169,7 +169,7 @@ const scenes = [
 	{
 		id: 9,
 		title: "Gimerra et sa noisette",
-		casting: [castBunny, castGimerra],
+		casting: [castBunny(10), castGimerra(10)],
 		image: "./images/scenes/scene10",
 		reactions: [
 			{
@@ -189,7 +189,7 @@ const scenes = [
 	{
 		id: 10,
 		title: "Frank s'envole",
-		casting: [castFrank, castBird],
+		casting: [castFrank(11), castBird(11)],
 		image: "./images/scenes/scene11",
 		beginTimecode: 377,
 		endTimecode: 405
@@ -197,7 +197,7 @@ const scenes = [
 	{
 		id: 11,
 		title: "Le plan de Frank tombe à l'eau",
-		casting: [castFrank, castBunny],
+		casting: [castFrank(12), castBunny(12)],
 		image: "./images/scenes/scene12",
 		reactions: [
 			{
@@ -217,7 +217,7 @@ const scenes = [
 	{
 		id: 12,
 		title: "Tout est bien qui finit bien",
-		casting: [castFrank, castBunny],
+		casting: [castFrank(13), castBunny(13)],
 		image: "./images/scenes/scene13",
 		reactions: [
 			{
@@ -252,7 +252,7 @@ const scenes = [
 	{
 		id: 14,
 		title: "Scène post crédits",
-		casting: [castFrank, castBird],
+		casting: [castFrank(15), castBird(15)],
 		image: "./images/scenes/scene15",
 		reactions: [
 			{
@@ -333,7 +333,7 @@ app.get('/scenes', (req,res) => {
 			id: scene.id,
 			title: scene.title,
 			beginTimecode: scene.beginTimecode,
-			endTimecode: scene.endTimecode,
+			endTimecode: scene.endTimecode
 		}
 	})
 
@@ -365,6 +365,10 @@ app.get('/scene/:timecode', async (req,res) => {
     res.status(200).json(scene)
 })
 
+// Serve static files in the /images folder
+app.use('/images', express.static('images'));
+
+// Default port if no port is given
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Serveur à l'écoute");
