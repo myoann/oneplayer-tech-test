@@ -54,7 +54,7 @@ paths:
         - name: timecode
           in: path
           required: true
-          description: Parameter description in CommonMark or HTML.
+          description: A timecode of the content Big Buck Bunny
           schema:
             type : string
       responses:
@@ -65,4 +65,11 @@ paths:
               schema: 
                 type: array
                 items: 
-                  type: string
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 4
+                    name:
+                      type: string
+                      example: Arthur Dent
