@@ -358,9 +358,8 @@ app.get('/scene/:timecode', async (req,res) => {
     	scene.beginTimecode <= timecode && scene.endTimecode >= timecode
     );
 
-	// Add a delay between 0 and 5 seconds before returning a result  
-   	const randomNumber = Math.floor(Math.random() * 5000) + 1;
-   	await delay(randomNumber);
+		// Add a delay of 3 seconds before returning a result  
+   	await delay(3000);
 
     res.status(200).json(scene)
 })
