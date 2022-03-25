@@ -23,18 +23,22 @@ paths:
                   properties:
                     id:
                       type: integer
+                      required: true
                       description: Id of the scene
                       example: 4
                     title:
                       type: string
+                      required: true
                       description: Title of the scene
                       example: Big Buck Bunny's success
                     beginTimecode:
                       type: integer
+                      required: true
                       description: Begin timecode of the scene
                       example: 400
                     endTimecode:
                       type: integer
+                      required: true
                       description: End timecode of the scene
                       example: 500
   /crew:
@@ -53,18 +57,22 @@ paths:
                   properties:
                     id:
                       type: integer
+                      required: true
                       description: Id of the crew member
                       example: 0
                     name:
                       type: string
+                      required: true
                       description: Name of the crew member
                       example: Sacha Goedegebure
                     role:
                       type: integer
+                      required: true
                       description: Role of the crew member
                       example: Director
                     image:
                       type: integer
+                      required: true
                       image: Main picture (external path) of the crew member
                       example: https://peach.blender.org/wp-content/uploads/small_IMG_3723.jpg
   /bonusImages:
@@ -83,10 +91,12 @@ paths:
                   properties:
                     path:
                       type: string
+                      required: true
                       description: External path of the image
                       example: https://peach.blender.org/wp-content/uploads/storyboardplate1.JPG
                     description:
                       type: string
+                      required: true
                       description: Description of the image represented
                       example: Storyboard
   /scene/{timecode}:
@@ -110,10 +120,12 @@ paths:
                 properties:
                   id:
                     type: integer
+                    required: true
                     description: Id of the scene
                     example: 4
                   title:
                     type: string
+                    required: true
                     description: Title of the scene
                     example: Big Buck Bunny's success
                   casting:
@@ -136,6 +148,7 @@ paths:
                           example: ./images/characters/Bunny1.png
                   image:
                     type: string
+                    required: true
                     description: Main image of the scene
                     example: ./images/scenes/scene12
                   reactions:
@@ -155,9 +168,11 @@ paths:
                           example: 420
                   beginTimecode:
                     type: integer
+                    required: true
                     description: Begin timecode of the scene
                     example: 400
                   endTimecode:
                     type: integer
+                    required: true
                     description: End timecode of the scene
                     example: 500
