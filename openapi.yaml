@@ -23,15 +23,19 @@ paths:
                   properties:
                     id:
                       type: integer
+                      description: Id of the scene
                       example: 4
                     title:
                       type: string
+                      description: Title of the scene
                       example: Big Buck Bunny's success
                     beginTimecode:
                       type: integer
+                      description: Begin timecode of the scene
                       example: 400
                     endTimecode:
                       type: integer
+                      description: End timecode of the scene
                       example: 500
   /crew:
     get:
@@ -45,7 +49,24 @@ paths:
               schema: 
                 type: array
                 items: 
-                  type: string
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: Id of the crew member
+                      example: 0
+                    name:
+                      type: string
+                      description: Name of the crew member
+                      example: Sacha Goedegebure
+                    role:
+                      type: integer
+                      description: Role of the crew member
+                      example: Director
+                    image:
+                      type: integer
+                      image: Main picture (external path) of the crew member
+                      example: https://peach.blender.org/wp-content/uploads/small_IMG_3723.jpg
   /bonusImages:
     get:
       summary: Find bonus images
@@ -62,9 +83,11 @@ paths:
                   properties:
                     path:
                       type: string
+                      description: External path of the image
                       example: https://peach.blender.org/wp-content/uploads/storyboardplate1.JPG
                     description:
                       type: string
+                      description: Description of the image represented
                       example: Storyboard
   /scene/{timecode}:
     get:
@@ -83,21 +106,21 @@ paths:
           content:
             application/json:
               schema: 
-                type: array
-                items: 
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      description: Id of the scene
-                      example: 4
-                    title:
-                      type: string
-                      description: Title of the scene
-                      example: Big Buck Bunny's success
-                    casting:
-                      type: object
-                      description: Casting of the scene
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: Id of the scene
+                    example: 4
+                  title:
+                    type: string
+                    description: Title of the scene
+                    example: Big Buck Bunny's success
+                  casting:
+                    type: array
+                    description: Casting of the scene
+                    items:
+                      type: object 
                       properties:
                         id:
                           type: integer
@@ -111,13 +134,15 @@ paths:
                         image:
                           type: string
                           example: ./images/characters/Bunny1.png
-                    image:
-                      type: string
-                      description: Main image of the scene
-                      example: ./images/scenes/scene12
-                    reactions:
-                      type: object
-                      description: People reactions to the scene
+                  image:
+                    type: string
+                    description: Main image of the scene
+                    example: ./images/scenes/scene12
+                  reactions:
+                    type: array
+                    description: People reactions to the scene
+                    items:
+                      type: object 
                       properties:
                         name:
                           type: string
@@ -128,11 +153,11 @@ paths:
                         timecode:
                           type: integer
                           example: 420
-                    beginTimecode:
-                      type: integer
-                      description: Begin timecode of the scene
-                      example: 400
-                    endTimecode:
-                      type: integer
-                      description: End timecode of the scene
-                      example: 500
+                  beginTimecode:
+                    type: integer
+                    description: Begin timecode of the scene
+                    example: 400
+                  endTimecode:
+                    type: integer
+                    description: End timecode of the scene
+                    example: 500
