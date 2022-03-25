@@ -9,7 +9,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.17.3",
-    "redoc": "^2.0.0-rc.65"
+    "express": "4.17.3"
   }
 }
