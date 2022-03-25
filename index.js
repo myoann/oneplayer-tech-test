@@ -367,7 +367,6 @@ app.get('/scene/:timecode', async (req,res) => {
 // Serve static files in the /images folder
 app.use('/images', express.static('images'));
 
-app.use('/index.html', express.static('index.html'));
 app.use('/openapi.yaml', express.static('openapi.yaml'));
 
 app.use(express.static(__dirname + "/"));
