@@ -367,7 +367,7 @@ app.get('/scene/:timecode', async (req,res) => {
 
 // Serve static files in the /images folder
 app.use('/images', express.static('images'));
-app.use('/redoc.html', express.static('redoc.html'));
+app.use('/index.html', express.static('index.html'));
 app.use('/openapi.yaml', express.static('openapi.yaml'));
 
 // Default port if no port is given
