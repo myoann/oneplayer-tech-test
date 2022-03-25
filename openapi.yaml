@@ -136,20 +136,24 @@ paths:
                       properties:
                         id:
                           type: integer
+                          description: Id of the cast member
                           example: 0
                         description:
                           type: string
+                          description: Description of the cast member
                           example: The rabbit
                         name:
                           type: string
+                          description: Name of the cast member
                           example: Big Buck Bunny
                         image:
                           type: string
+                          description: Main image (internal path) of the cast member
                           example: ./images/characters/Bunny1.png
                   image:
                     type: string
                     required: true
-                    description: Main image of the scene
+                    description: Main image (internal path) of the scene
                     example: ./images/scenes/scene12
                   reactions:
                     type: array
@@ -159,12 +163,15 @@ paths:
                       properties:
                         name:
                           type: string
+                          description: Name of the person who reacted to the scene
                           example: John Doe
                         message:
                           type: string
+                          description: Content of the reaction's message
                           example: It looks amazing!
                         timecode:
                           type: integer
+                          description: Timecode when the message was sent
                           example: 420
                   beginTimecode:
                     type: integer
