@@ -89,12 +89,15 @@ paths:
                   properties:
                     id:
                       type: integer
+                      description: Id of the scene
                       example: 4
                     title:
                       type: string
+                      description: Title of the scene
                       example: Big Buck Bunny's success
                     casting:
                       type: object
+                      description: Casting of the scene
                       properties:
                         id:
                           type: integer
@@ -110,9 +113,11 @@ paths:
                           example: ./images/characters/Bunny1.png
                     image:
                       type: string
+                      description: Main image of the scene
                       example: ./images/scenes/scene12
                     reactions:
                       type: object
+                      description: People reactions to the scene
                       properties:
                         name:
                           type: string
@@ -125,7 +130,9 @@ paths:
                           example: 420
                     beginTimecode:
                       type: integer
+                      description: Begin timecode of the scene
                       example: 400
                     endTimecode:
                       type: integer
+                      description: End timecode of the scene
                       example: 500
