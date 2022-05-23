@@ -371,6 +371,8 @@ app.use('/openapi.yaml', express.static('openapi.yaml'));
 // Serve index.html file statically
 app.use(express.static(__dirname + "/"));
 
+app.use(cors());
+
 // Default port if no port is given
 const PORT = process.env.PORT || 3000;
 
