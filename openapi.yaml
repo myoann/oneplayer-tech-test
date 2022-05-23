@@ -73,7 +73,7 @@ paths:
                     image:
                       type: integer
                       required: true
-                      image: Main picture (external path) of the crew member
+                      description: Main picture (external path) of the crew member
                       example: https://peach.blender.org/wp-content/uploads/small_IMG_3723.jpg
   /bonusImages:
     get:
