@@ -108,12 +108,11 @@ paths:
       description: Returns a list of details of a specific scene corresponding to the given timecode
       parameters:
         - name: timecode
+          required: true
           in: path
           description: A timecode of the content Big Buck Bunny
           schema:
             type : string
-      required:
-        - timecode
       responses:
         '200':    # status code
           description: A JSON of a scene
