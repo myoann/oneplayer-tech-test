@@ -13,6 +13,7 @@ const bonusImages = [
 	}
 ];
 
+// Casting present on each scene
 const castBunny = (sceneId) => ({
 	id: 0,
 	description: "Le lapin",
