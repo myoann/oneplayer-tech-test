@@ -4,7 +4,7 @@ info:
   description: API related to the technical test provided by the OnePlayer team based on a video player having Big Buck Bunny as the main content
   version: 1.0.0
 servers:
-  - url: https://oneplayer-tech-test.herokuapp.com
+  - url: https://teamplayer.ddns.net:32783
     description: Main server
 paths:
   /scenes:
